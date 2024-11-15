@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="{{ url_for('static', filename='script.js') }}" type="text/javascript" charset="utf-8"></script>
+    <style>
+        #prompt {
+            width: 32rem;
+            height: 18rem;
+            overflow: hidden;
+            resize: none;
+        }
+        #messageList {
+            width: 32rem;
+        }
+    </style>
+</head>
+<body>
+    <button id="startButton" onclick="start_recording()">Start Recording</button>
+    <button disabled id="stopButton" onclick="stop_recording()">Stop Recording</button>
+
+    <form id="chatForm">
+        <textarea name="" id="prompt"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="messageList">
+        <!-- <p id="chatMessage"></p> -->
+    </div>
+</body>
+</html>

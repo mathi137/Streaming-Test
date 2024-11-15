@@ -1,0 +1,9 @@
+services:
+  lain_page1: &lain_page
+    build: .
+    hostname: lain-page
+    container_name: lian-page-container
+    ports:
+      - 8000:8000
+    environment:
+      - LIAN_API_URL=${LIAN_API_URL}
