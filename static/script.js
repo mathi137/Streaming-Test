@@ -25,7 +25,7 @@ async function start_recording() {
     swicthEnable();
 
     // Connects to the server
-    socket = io.connect('http://localhost:5000/speech', { reconnectionAttempts: 3, reconnectionDelay: 1000, reconnectionDelayMax: 5000 });
+    socket = io.connect('https://educational-rag-production.up.railway.app/speech', { reconnectionAttempts: 3, reconnectionDelay: 1000, reconnectionDelayMax: 5000 });
 
     // Get audio input from user
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -147,7 +147,7 @@ async function sendChatMessage() {
         'user_id': '1'
     });
 
-    const response = await fetch(`http://localhost:5000/chat?${params}`, {
+    const response = await fetch(`https://educational-rag-production.up.railway.app/chat?${params}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
